@@ -1,16 +1,3 @@
-"""
-BFS x A* em um grid 15x15
------------------------------------
-Objetivo: Encontrar um caminho do ponto (0,0) até (14,14)
-desviando de obstáculos (#) em mapas fornecidos.
-
-Saídas esperadas (para cada mapa e algoritmo):
-- Caminho encontrado (lista de coordenadas) ou mensagem de erro
-- Tamanho do caminho
-- Nós expandidos
-- Tempo de execução (ms)
-"""
-
 import time
 import heapq
 from collections import deque
@@ -168,7 +155,7 @@ def visualize(grid, path=None, title="Mapa"):
 
 
 # =============================
-# Mapas corrigidos
+# Mapas
 # =============================
 
 MAP_A = [
@@ -207,8 +194,27 @@ MAP_B = [
     "##...........#."
 ]
 
+MAP_C = [
+    "..##.....###...",
+    ".#...#...##....",
+    "###.#...##...##",
+    "..#.##.#.......",
+    "#....#....##...",
+    "...#..######..#",
+    "#.##..#......#.",
+    ".##..##......#.",
+    "#......#....##.",
+    "...#..#####.#.#",
+    "##...#....#.##.",
+    "##....#..#..##.",
+    "...##..#......#",
+    "#.##.###..#..#.",
+    "#.............."
+]
+
 grid_A = parse_map(MAP_A)
 grid_B = parse_map(MAP_B)
+grid_C = parse_map(MAP_C)
 
 
 # =============================
@@ -237,4 +243,7 @@ def run_and_compare(name, grid):
 if __name__ == "__main__":
     run_and_compare("Mapa A", grid_A)
     run_and_compare("Mapa B", grid_B)
+    run_and_compare("Mapa C", grid_C)
+
+
 
